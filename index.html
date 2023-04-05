@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roberto Flores PreEntrega3</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Roberto Flores PreEntrega3 Curso JS CoderHouse 2023">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Cotizar Autos Honda</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#Modal">Cotizador</a>
+                  </li>
+                  
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section id="main">
+        <main >
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="margin-bottom: 10%;">
+                            <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#Modal">
+                                Cotizar Automóvil
+                            </button>
+                        </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="margin-bottom: 10%;">
+                            <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#Modal">
+                                Cotizar Automóvil
+                            </button>
+                        </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/slide4.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="margin-bottom: 10%;">
+                            <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#Modal">
+                                Cotizar Automóvil
+                            </button>
+                        </p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <p class="text-center"><img src="img/honda.jpg" alt="Honda"></p>
+        </main>
+    </section>
+    <section id ="cotizado" class="d-none">
+        <div class="row mt-3">
+            <div class="col">
+                <p class="text-center h2 text-success">Gracias <strong><span id="cliente" class="text-primary"></span></strong> tú cotización es: </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-5">
+                
+                <p class="text-left">Costo del automóvil: $<span id="txtCostoAuto" class="h5"></span>Pesos Mexicanos</p>
+                <p class="text-left">Contidad del financiamiento: $<span id="txtFinanciamiento" class="h5"></span>Pesos Mexicanos</p>
+                <p class="text-left">Porcentaje del Enganche: <span id="txtEnganche" class="h5"></span>%</p>
+                <p class="text-left">Cantidad del Enganche: $<span id="cantidadEnganche" class="h5"></span> Pesos Mexicanos</p>
+                <p class="text-left">Mensualidades: <span id="txtMensualidad" class="h5"></span></p>
+                
+                
+            </div>
+            <div class="col-4">
+                <p class="text-center">Automóvil seleccionado: <span id="txtCoche" class="h5 text-danger"></span></p>
+                <p class="text-center"><img alt="Auto" id="imgAuto"></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <table align="center" border="1" cellpadding="4" cellspacing="4" style="width:90%" class="table table-bordered table-hover mb-5">
+                    
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Mensualidad #</th>
+                            <th scope="col" class="text-center">Mensualidad</th>
+                            <th scope="col" class="text-center">Intereses</th>
+                            <th scope="col" class="text-center">Impuestos</th>
+                            <th scope="col" class="text-center">Total Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMensual">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center"><img src="img/honda.jpg" alt="Honda"></p>
+        </div>
+    </section>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="Modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel"aria-labelledby="Modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="Modal">Cotizador</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" id="formulario" name="formulario">
+        <div class="modal-body">
+         <div class="row justify-content-center">
+            <div class="col-8">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                      <label for="auto" class="form-label">Selecciona un automóvil</label>
+                    <select class="form-select" id="selectAuto" name="selectAuto" required>
+                        <option value="" selected>Selecciona un automóvil</option>
+                    </select>
+                    <label for="mensualidad" class="form-label">Mensualidades a pagar</label>
+                    <select class="form-select" id="mensualidad" name="mensualidad" required>
+                        <option value="" selected>Mensalidades</option>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="36">36</option>
+                        <option value="48">48</option>
+                        <option value="72">72</option>
+                    </select>
+                    <label for="enganche" class="form-label">Porcentaje del Enganche</label>
+                    <select class="form-select" id="enganche" name="enganche" required>
+                        <option value="" selected>Enganche</option>
+                        <option value="10">10%</option>
+                        <option value="20">20%</option>
+                        <option value="30">30%</option>
+                        <option value="40">40%</option>
+                        <option value="50">50%</option>
+                    </select>
+            </div>
+         </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success" id="btnCalcular" >Calcular</button>
+        </div>
+    </form>
+
+      </div>
+    </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</body>
+</html>
